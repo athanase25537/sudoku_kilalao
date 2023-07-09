@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url('../imgs/1461351961.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #608ad869;
+    backdrop-filter: blur(2px);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+#errors {
+    color: coral;
+}
+
+#board {
+    max-width: 450px;
+    max-height: 450px;
+    width: 50vw;
+    height: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding: 5px 3px;
+}
+
+.tile {
+    max-width: 48px; 
+    max-height: 48px;
+    width: 5vw;
+    height: 5vw;
+    border: 1px solid rgb(23, 180, 228);
+
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color .3s;
+}
+.tile.error{
+    border: 1px solid #D8000C;
+    background-color: #FFBABA;
+    animation: error .2s infinite;
+}
+
+#digits {
+    max-width: 450px;
+    max-height: 50px;
+    width: 50vw;
+    height: 5vw;
+    margin: 0 auto;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.tile:hover{
+    scale: 1.05;
+}
+
+.number {
+    width: 44px; 
+    height: 100%;
+    border: 1px solid black;
+    margin: 2px;
+
+    /* Text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.number:hover{
+    background-color: #315fdd;
+    color: white;
+    scale: 1.08;
+}
+
+.number-selected {
+    background-color: rgb(130, 188, 206);
+}
+
+.tile-start {
+    background-color: rgb(203, 219, 228);
+}
+
+.horizontal-line {
+    border-bottom: 1px solid black;
+}
+
+.vertical-line {
+    border-right: 1px solid black;
+}
+
+@keyframes error {
+    0%{
+        transform: translate(0, 0);
+    }
+    20%{
+        transform: translate(-2%, -2%);
+    }
+    40%{
+        transform: translate(0, 0);
+    }
+    60%{
+        transform: translate(2%, 2%);
+    }
+    80%{
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
